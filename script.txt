@@ -1,0 +1,22 @@
+# Connect to SFTP server
+open sftp://<USER_NAME/PASSWORD>@<SFTP_SERVER>/ -hostkey="<HOST_KEY>"
+
+# Change remote working directory
+cd /%DirPath%
+
+# List contents of remote directory
+ls
+
+# Change local working directory
+lcd %DownloadPath%
+
+echo Downloading all attachments of directory: %DirPath% to %DownloadPath% ...
+echo ------------------------------------------------------------------------------------ 
+# Download all files from remote to local directory
+get *
+echo ------------------------------------------------------------------------------------
+echo Download complete ...
+
+
+# Exit WinSCP
+exit
